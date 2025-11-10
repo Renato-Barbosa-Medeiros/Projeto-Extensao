@@ -1,0 +1,34 @@
+O site sera sobre o filme "Superman 2025".
+
+HTML
+
+ESTRUTURA DE UM DOCUMENTO HTML
+tag html: identifica que é um documento html
+tag !DOCTYPE: indetifica q a versão do html usado é a mais recente
+tag head: concentra os metadados da pagina, como: tipo de caractere usado, titulo da pagina e tag de ligação com o css
+tag body: onde o conteúdo visível ao usuário fica, como: textos, imagens, vídeos, etc
+tag footer: rodapé da pagina, onde normalmente ficam informações sobre direiros autorais
+
+2. TAGS SEMANTICAS
+As tags semânticas são aquelas que descrevem o significado do conteúdo que envolvem, em vez de apenas definir sua aparência.
+tags de titulo(<h1>, <h2>, <h3>, <h4>, <h5> e <h6>): tags que determina a hierarqui do texto sendo h1 o maior titulo e h6 sendo o texto de menor tamanho
+tags de paragrafo(<p>): determina um area de paragarafo para o texto
+tag b: deixa o texto em negrito
+tag i: deixa o texto em italico
+tag <button>: tag para botão
+tag <br>: é uma quebra de linha no texto
+tag de imagem(<img>): tags que permitem adicionar imagens
+tags de video(<video>): permite adicionar videos locais a pagina
+tag de <iframe>: tambem permite acionar videos, mas de outras fontes da web. tambem permite adiconar outra pagina dentro de uma pagina
+tag <a>: permite interligar duas paginas distintas atraves de uma ligaçao
+tag <link>: permite linkar um documento css externo a pagina html
+tag <script>: permite vincular um arquivo javascript a pagina
+tag <section>: reserva uma secao da pagina html, é como se fosse uma caixa
+tag <div>: abreviação de "divisão", muito utilizada para separar varios elementos relacionados em "caixas"
+
+3. ATRIBUTOS DE TAGS
+Atributos são elementos dentro de uma tag HTML que fornecem informações adicionais para a tag, modificando seu comportamento ou fornecendo dados extras.
+lang="pt-br" -> principal artributo utilizado na tag <html> e serve definir o idioma da pagina
+class="classe" e id="vermelho" -> atributos que podem ser utilizadas em todas as tags html e definem uma classe ou um id a um elemento html, para fims de estilização via css
+src="" -> define a origem ou a fonte das tags de vídeo e imagem
+href="" -> define o caminho de um link ou de uma tag <a>
