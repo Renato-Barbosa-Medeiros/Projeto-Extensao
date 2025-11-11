@@ -36,7 +36,7 @@ body {
      background-attachment: fixed; /* Faz o fundo ficar parado ao rolar */
      color: white; /* Define a cor do texto padrão como branco */
      margin: 0; /* Remove margens padrão do body */
-     padding: 20px; /* Adiciona um respiro nas laterais da página */
+     padding: 50px 100px 0px 100px; /* Adiciona um respiro nas laterais da página */
 }
 
 /* ---------------------------------------------
@@ -138,17 +138,32 @@ iframe {
 
 }
 
-h2 {
+h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px;
 }
 
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estrela {
+    font-size: 30px;
+    cursor: pointer;
+    color: lightgray;
+}
+.estrela.preenchida {
+    color: gold;
+}
+
 .footer {
     display: fixed;
     padding: 16px;
     text-align: center;
-    background-color: darkred;
-    margin-top: 20%;
+    background-color: grey;
+    margin-top: 10%;
 }
