@@ -30,13 +30,19 @@ header nav a.ativo {
 
 body {
      background-color: rgb(11, 10, 19); /* Define a imagem de fundo */
-     background-size: cover; /* A imagem cobre toda a área visível */
-     background-repeat: no-repeat; /* Impede que a imagem se repita */
-     background-position: center; /* Centraliza a imagem dentro do elemento */
-     background-attachment: fixed; /* Faz o fundo ficar parado ao rolar */
      color: white; /* Define a cor do texto padrão como branco */
      margin: 0; /* Remove margens padrão do body */
      padding: 50px 100px 0px 100px; /* Adiciona um respiro nas laterais da página */
+}
+
+#bodyInicio {
+    display: relative;
+    background-image: url("https://images3.alphacoders.com/137/thumb-1920-1379856.jpg");
+    background-size: cover; /* A imagem cobre toda a área visível */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem dentro do elemento */
+    background-attachment: fixed; /* Faz o fundo ficar parado ao rolar */
+    
 }
 
 /* ---------------------------------------------
@@ -85,6 +91,13 @@ h1 {
        ficar alinhado à esquerda, dentro da sua coluna */
     margin-top: 0; /* Remove margem do topo */
     margin-bottom: 24px;
+}
+
+#h1Inicio {
+    font-size: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 .sinopse p {
