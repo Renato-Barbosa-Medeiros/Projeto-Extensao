@@ -1,167 +1,222 @@
+/* --- 1. CONFIGURAÇÕES GLOBAIS --- */
+
+/* O seletor '*' afeta TODOS os elementos */
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box; /* Boa prática: padding não afeta o tamanho total */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
+    box-sizing: border-box; /* O padding não afeta o tamanho total */
+    margin: 0; /* Reseta margens */
+    padding: 0; /* Reseta paddings */
 }
 
+html {
+    /* A rolagem suave (smooth) será controlada pelo 'main' */
+}
+
+body {
+     background-color: #121212; 
+     color: white; 
+}
+
+/* ---------------------------------------------
+  HEADER (MENU FIXO)
+  --------------------------------------------- */
 header {
-    padding: 20px, 0;
-    position: relative;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo preto com transparência */
+    padding: 20px 0; /* Espaço interno (em cima/baixo) */
+    position: fixed; /* Fixa o menu no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa 100% da largura */
+    z-index: 1000; /* Garante que o menu fique por cima */
 }
 
 header nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    gap: 36px;
-    padding: 0 20px;
-    justify-content: center;
+    max-width: 1200px; /* Largura máxima do conteúdo do menu */
+    margin: 0 auto; /* Centraliza o <nav> */
+    display: flex; /* Coloca os links lado a lado */
+    gap: 36px; /* Espaço ENTRE os links */
+    justify-content: center; /* Centraliza os links horizontalmente */
 }
 
 header nav a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado */
     font-size: 16px;
-    font-weight: 400;
-}
-
-header nav a.ativo {
-    font-weight: bold;
-}
-
-body {
-     background-color: rgb(11, 10, 19); /* Define a imagem de fundo */
-     color: white; /* Define a cor do texto padrão como branco */
-     margin: 0; /* Remove margens padrão do body */
-     padding: 50px 100px 0px 100px; /* Adiciona um respiro nas laterais da página */
-}
-
-#bodyInicio {
-    display: relative;
-    background-image: url("https://images3.alphacoders.com/137/thumb-1920-1379856.jpg");
-    background-size: cover; /* A imagem cobre toda a área visível */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-    background-position: center; /* Centraliza a imagem dentro do elemento */
-    background-attachment: fixed; /* Faz o fundo ficar parado ao rolar */
-    
+    font-weight: 700;
 }
 
 /* ---------------------------------------------
-  A MÁGICA DO LAYOUT (GOAL 1)
-  --------------------------------------------- 
-*/
-.detalhes-container {
-    display: flex; /* ATIVA O FLEXBOX: os filhos ficam lado a lado */
-    gap: 40px; /* Cria um espaço de 40px entre as colunas */
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
-    margin: 40px auto; /* Centraliza o container na página */
+  LAYOUT DAS SEÇÕES (ROLAGEM)
+  --------------------------------------------- */
+main {
+    overflow-y: scroll; /* Permite a rolagem vertical */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    
+    /* Define a rolagem suave para este container (o <main>) */
+    scroll-behavior: smooth;
+}
+
+/* Regra geral para todas as seções */
+.page-section {
+    width: 100%;
+    display: flex; /* Habilita o Flexbox para alinhar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     padding: 20px;
+    padding-top: 100px; /* Espaço para o header fixo não cobrir */
     
+    /* Garante que a seção tenha PELO MENOS
+      o tamanho da tela, mas pode crescer.
+    */
+    min-height: 100vh;
 }
 
-.poster-coluna {
-    /* A coluna da imagem não deve crescer ou encolher, 
-       e terá uma largura fixa de 350px */
-    flex: 0 0 350px; 
+/* --- SEÇÃO 1: INÍCIO --- */
+#inicio {
+    height: 100vh; /* Altura exata de 100% da tela */
+    background-image: url('https://images3.alphacoders.com/137/thumb-1920-1379856.jpg?text=Sua+Imagem+de+Fundo+Aqui');
+    background-size: cover; /* Faz a imagem cobrir a seção */
+    background-position: center; /* Centraliza a imagem */
+    
+    /* Alinha o <h1> (filho) no canto inferior esquerdo */
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: flex-end;     /* Alinha embaixo */
 }
 
-.info-coluna {
-    /* A coluna de informação vai "crescer" para 
-       ocupar o resto do espaço disponível */
-    flex: 1; 
+/* Título <h1> da capa */
+.titulo-principal {
+    font-size: 5em; /* Tamanho grande */
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* Sombra para legibilidade */
+    padding: 40px; /* Espaçamento das bordas */
 }
 
-/* ---------------------------------------------
-  A MÁGICA DA IMAGEM (GOAL 2)
-  --------------------------------------------- 
-*/
+/* --- SEÇÃO 2: DETALHES (CONTEÚDO) --- */
+#detalhes {
+    /* 'height: auto' permite que esta seção cresça
+       para caber todo o conteúdo (sinopse, elenco, etc.)
+       Isso faz o footer aparecer corretamente. */
+    height: auto; 
+    background-color: #121212;
+}
+
 img {
     width: 100%; /* Imagem ocupa 100% da sua coluna (os 350px) */
-    
     /* ---- AQUI ESTÁ A SOLUÇÃO ---- */
     height: 400px; /* Definimos uma ALTURA fixa, mais alta que a largura */
     object-fit: cover; /* "Corta" a imagem para caber, sem distorcer */
     /* ------------------------------ */
-
     border-radius: 16px; /* Bordas arredondadas */
-    display: block; /* Remove espaços extras embaixo da imagem */
+    display: block;
 }
 
-h1 {
-    /* Tira o 'text-align: center;' para o título 
-       ficar alinhado à esquerda, dentro da sua coluna */
-    margin-top: 0; /* Remove margem do topo */
-    margin-bottom: 24px;
+/* --- SEÇÃO 3: TRAILER --- */
+#trailer {
+    height: 100vh; /* Altura exata de 100% da tela */
+    background-color: #121212;
 }
 
-#h1Inicio {
-    font-size: 60px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+/* ---------------------------------------------
+  CONTEÚDO DAS SEÇÕES
+  --------------------------------------------- */
+.detalhes-container {
+    display: flex; 
+    flex-wrap: wrap; /* Em telas pequenas, as colunas quebram */
+    gap: 40px; 
+    width: 100%;
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    border-radius: 16px; /* Bordas arredondadas */
+}
+
+.poster-coluna {
+    flex: 0 0 350px; /* Largura fixa de 350px */
+}
+
+.info-coluna {
+    flex: 1; /* Ocupa o espaço que sobrou */
+}
+
+.poster-coluna img {
+    width: 100%; /* Imagem ocupa 100% da sua coluna (os 350px) */
+    /* ---- AQUI ESTÁ A SOLUÇÃO ---- */
+    height: 410px; /* Definimos uma ALTURA fixa, mais alta que a largura */
+    object-fit: cover; /* "Corta" a imagem para caber, sem distorcer */
+    /* ------------------------------ */
+    border-radius: 16px; /* Bordas arredondadas */
+    display: block; 
+}
+
+/* Títulos <h2> */
+h2 {
+    margin-bottom: 24px; 
+    text-align: center; 
+    font-size: 2.5em; 
+}
+
+.info-coluna h2 {
+    text-align: left; /* Título "Detalhes do Filme" */
 }
 
 .sinopse p {
-    line-height: 1.6; /* Melhora a legibilidade */
-    margin-bottom: 24px;
+    line-height: 1.6; /* Altura da linha (legibilidade) */
 }
-
 .lista-info ul {
-    padding-left: 0;
+    padding-left: 0; /* Remove o recuo da lista */
 }
-
 .lista-info li {
-    list-style: none; /* Remove as "bolinhas" da lista */
-    margin-bottom: 8px; /* Espaçamento entre os itens */
+    list-style: none; /* Remove as "bolinhas" */
+    margin-bottom: 8px; /* Espaço entre os itens */
 }
-
-
-/* --- Estilos antigos (com leves melhorias) --- */
-
 .tags {
     display: flex;
-    flex-wrap: wrap; /* Faz as tags quebrarem a linha se não couberem */
-    gap: 15px; /* Espaçamento entre as tags */
+    flex-wrap: wrap;
+    gap: 15px; 
+    width: 100%;
     max-width: 1200px;
-    margin: 40px auto; /* Centraliza e dá espaço em cima/baixo */
+    margin-top: 20px;
+    justify-content: center;
 }
-
 .tags div {
-  border: 2px solid #fff; /* Borda branca de 2px */
-  padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
-  background-color: steelblue; /* Deixe o fundo transparente */
-  color: white; /* Cor do texto */
-  font-size: 16px; /* Tamanho da fonte */
-  border-radius: 16px; /* Bordas arredondadas */
+  border: 2px solid #fff; 
+  padding: 10px 20px; 
+  background-color: steelblue; 
+  color: white; 
+  border-radius: 16px; 
 }
 
-li {
-    list-style: none;
+/* --- Trailer --- */
+.trailer-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 70px;
 }
 
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+/* Estilo do <iframe> (player do YouTube) */
+.trailer-video {
+    height: 480px; 
+    width: 100%; 
+    max-width: 854px; 
+    border-radius: 16px;
+    border: none; /* Remove a borda padrão do iframe */
 }
 
-iframe {
-    border: none;
-    margin-top: 7%;
-
-}
-
-h2, h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+.legenda {
+    margin-top: 16px; /* Espaço acima da legenda */
+    font-size: 18px;
+    color: #A0A0A0; /* Cor cinza claro */
 }
 
 #wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 .estrela {
@@ -173,10 +228,15 @@ h2, h3 {
     color: gold;
 }
 
+/* ---------------------------------------------
+  RODAPÉ
+  --------------------------------------------- */
 .footer {
-    display: fixed;
-    padding: 16px;
+    padding: 30px;
     text-align: center;
-    background-color: grey;
-    margin-top: 10%;
+    background-color: gray;
+    
+    /* O footer é o último item dentro do <main>
+       e aparece naturalmente no fim da rolagem.
+    */
 }

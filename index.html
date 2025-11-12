@@ -1,52 +1,120 @@
-<!DOCTYPE html> <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <title>Meu filme favorito</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Superman - Projeto Completo</title>
 </head>
 <body>
+    
+    <!-- HEADER (Menu Fixo) -->
     <header>
         <nav>
-            <a href="inicio.html">Início</a>
-            <a href="#" class="ativo">Detalhes</a>
-            <a href="fim.html">Trailer</a>
+            <!-- Links de âncora para rolar a página -->
+            <a href="#inicio">Início</a>
+            <a href="#detalhes">Detalhes</a>
+            <a href="#trailer">Trailer</a>
         </nav>
     </header>
-    <div class="detalhes-container">
 
-        <section class="poster-coluna">
-            <img src="https://i.pinimg.com/736x/a8/a7/cb/a8a7cbd006d57e560ea0326b8b8a18b3.jpg" alt="poster do filme">
-        </section> 
+    <!-- Container principal da rolagem -->
+    <main>
 
-        <section class="info-coluna">
-            <h1>Superman 2025</h1> 
+        <!-- SEÇÃO 1: "INÍCIO" (A CAPA) -->
+        <section id="inicio" class="page-section">
+            <h1 class="titulo-principal">Superman 2025</h1>
+        </section>
 
-            <div class="sinopse"> <p><b>Sinopse:</b> A sinopse de Superman (2025), dirigido por James Gunn, mostra Clark Kent tentando conciliar sua herança alienígena de Krypton com sua vida humana como repórter, enquanto lida com uma sociedade que vê os valores de verdade e justiça como antiquados. O filme explora a fragilidade do herói ao ter que reconquistar o apoio público após um incidente orquestrado por Lex Luthor, com a ajuda de repórteres e outros super-heróis. 
-                O dilema de Clark: O protagonista precisa equilibrar sua origem kryptoniana com sua criação humana em Smallville, Kansas.
-                O papel da sociedade: Ele se vê em um mundo que considera a bondade e seus ideais obsoletos.
-                Conflito com Lex Luthor:
-                </p>
-            </div>
 
-            <div class="lista-info"> 
-                <ul>
-                    <li><b>Duração: </b>2h 9m</li>
-                    <li><b>Diretor: </b>James Gunn</li>
-                    <li><b>Lançamento: </b>10 de Julho de 2025</li> <li><b>Autores:</b> Joe Shuster, Jerry Siegel</li>
-                    <li><b>Baseado em:</b> Superman; de: Jerry Siegel; Joe Shuster</li>
-                    <li><b>Companhia(s) produtora(s):</b> DC Studios; Troll Court Entertainment; Safran Company</li>
-                </ul>
+        <!-- SEÇÃO 2: "DETALHES" (Pôster + Sinopse + Elenco) -->
+        <section id="detalhes" class="page-section">
+            <div class="content-wrapper">
+                
+                <div class="detalhes-container">
+                    
+                    <!-- Coluna do Poster -->
+                    <section class="poster-coluna">
+                        <!-- A imagem do poster -->
+                        <img src="https://i.pinimg.com/736x/a8/a7/cb/a8a7cbd006d57e560ea0326b8b8a18b3.jpg" alt="poster do filme">
+                    </section> 
+                    
+                    <!-- Coluna de Informações -->
+                    <section class="info-coluna">
+                        
+                        <!-- Título da Seção -->
+                        <h2>Detalhes do Filme</h2>
+
+                        <!-- Sinopse -->
+                        <div class="sinopse"> 
+                            <p><b>Sinopse: </b>Um herói movido pela crença e pela esperança na bondade da humanidade. Em Superman, acompanhamos a jornada do super-herói em tentar conciliar suas duas personas: sua herança extraterrestre como kryptoniano e sua vida humana, criado como Clark Kent (David Corenswet) na cidade de Smallville no Kansas. Dirigido por James Gunn, o novo filme irá reunir personagens, heróis e vilões clássicos da história de Superman, como Lex Luthor (Nicholas Hoult), Lois Lane (Rachel Brosnahan), Lanterna Verde (Nathan Fillion), Mulher-Gavião (Isabela Merced), entre outros. O chamado de Superman será colocado à prova através de uma série de novas aventuras épicas e diante de uma sociedade que enxerga seus valores de justiça e verdade como antiquados.</p>
+                        </div>
+                        <br>
+
+                        <!-- Lista de Infos (Duração, Diretor...) -->
+                        <div class="lista-info">
+                            <ul> 
+                                <li><b>Duração: </b>2h 9m</li>
+                                <li><b>Diretor: </b>James Gunn</li>
+                                <li><b>Lançamento: </b>10 de Julho de 2025</li>
+                                <li><b>Autores:</b> Joe Shuster, Jerry Siegel</li>
+                                <li><b>Baseado em: </b>Superman; de: Jerry Siegel; Joe Shuster</li>
+                                <li><b>Companhia(s) produtora(s): </b>DC Studios; Troll Court Entertainment; Safran Company</li>
+                            </ul>
+                        </div>
+                        
+                    </section> <!-- Fim da info-coluna -->
+                </div> <!-- Fim do detalhes-container -->
+                
+                <!-- Tags -->
+                <section class="tags"> 
+                    <div>Ação épica</div>
+                    <div>Aventura épica</div>
+                    <div>Épico</div>
+                    <div>Super-herói</div>
+                    <div>AÇÃO</div>
+                </section>
+
+            </div> <!-- Fim do .content-wrapper -->
+        </section>
+
+
+        <!-- SEÇÃO 3: "TRAILER" -->
+        <section id="trailer" class="page-section">
+            <div class="trailer-container">
+                <h2>Trailer</h2>
+                
+                <!-- 
+                  O <iframe> (player do YouTube)
+                  A classe .trailer-video foi aplicada a ele.
+                -->
+                <iframe class="trailer-video" src="https://www.youtube.com/embed/14qzQDMcTqM?si=zhrwyGyuXiVDNtak&amp;controls=0" alt="Thumbnail do trailer"></iframe>
+                
+                <!-- 
+                  A legenda <p> deve vir DEPOIS do iframe.
+                -->
+                <p class="legenda">Superman 2025 Trailer</p>
             </div>
         </section>
 
-    </div> 
-    <section class="tags"> <div>Ação épica</div> <div>Aventura épica</div>
-        <div>Épico</div>
-        <div>Épico de ficção ciêntifico</div>
-        <div>Super-herói</div>
-        <div>Ação</div>
-    </section>
+        <div id="wrapper">
+            <h3>Classifique o Filme:</h3>
+            <div id="estrelas">
+                <span class="estrela" numero="1">★</span> <!-- dá um numero para cada estrela -->
+                <span class="estrela" numero="2">★</span>
+                <span class="estrela" numero="3">★</span>
+                <span class="estrela" numero="4">★</span>
+                <span class="estrela" numero="5">★</span>
+            </div>
+        </div>
 
-    <button onclick="mostraMsg()" >Aperte aqui!</button> 
-    <a href="./fim.html"></a>
-    <footer class="footer">Copyright 2025</footer> <script src="./scripts.js"></script> </body>
+        <!-- Rodapé único no final de tudo -->
+        <footer class="footer">
+            Copyright 2025. Desenvolvido por Aluno
+        </footer> 
+    
+    </main>
+        
+    <script src="./scripts.js"></script> 
+</body>
 </html>
